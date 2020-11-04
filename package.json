@@ -1,0 +1,16 @@
+{
+  "name": "memedown-discord",
+  "version": "1.0.0",
+  "description": "Discord Bot for MemeDown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ravi Sinha",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "discord.js": "^12.4.1",
+    "form-data": "^3.0.0"
+  }
+}
