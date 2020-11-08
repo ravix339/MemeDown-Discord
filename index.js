@@ -8,7 +8,7 @@ client.on('ready', () => {
     console.log("I am ready to meme");
 });
 
-client.on('message', async function(msg) {
+client.on('message', async msg => {
     if (msg.author == client.user) return;
 
     if (!msg.mentions.has(client.user)) return;
@@ -31,7 +31,8 @@ client.on('message', async function(msg) {
         let imgb64 = await MemeDown.sendMessage(CONFIG.MEMEDOWN_ENDPOINT, content, imgUrl);
         const imageStream = Buffer.from(imgb64, 'base64');
         const attachment = new Discord.MessageAttachment(imageStream);
-        msg.reply("Aha! Time for a dank meme!", attachment);
+        await msg.reply("Aha! Time for a dank meme!", attachment);
+        msg.delete();
     }
     catch (e) {
         console.log(e);
